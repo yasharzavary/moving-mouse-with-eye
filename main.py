@@ -22,5 +22,9 @@ while True:
                 move_x=landmark.x*screenw
                 move_y=landmark.y*screenh
                 pyautogui.moveTo(move_x,move_y)
+        lefteye=[landmarks[145],landmarks[159]]
+        if (lefteye[0].y - lefteye[1].y) <0.004:
+            pyautogui.click()
+            pyautogui.sleep(1)
     cv2.imshow("eye control", frame)
     cv2.waitKey(1)
